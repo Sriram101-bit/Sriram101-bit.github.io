@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Emergency Management System</h1>
+    <p class="site-header__sub">Regional emergency response &amp; safety information</p>
+  </header>
+
+  <div class="layout">
+    <section class="map-section" aria-label="United States emergency map">
+      <div class="map-section__top">
+        <h2 class="section-label">Select a Region</h2>
+        <p class="map-hint">Hover a node to preview · Click to load emergency data</p>
+      </div>
+
+      <div class="map-wrap">
+        <div class="grid-map" id="grid-map" role="group" aria-label="Grid map of the United States"></div>
+      </div>
+
+      <div class="info-panel" id="info-panel" aria-live="polite">
+        <div class="info-panel__placeholder" id="info-placeholder">
+          <span class="info-panel__icon" aria-hidden="true">&#9888;</span>
+          <p>Select a node to view emergency type and contact number</p>
+        </div>
+        <div class="info-panel__content hidden" id="info-content">
+          <p class="info-panel__region" id="info-region"></p>
+          <h3 class="info-panel__type" id="info-type"></h3>
+          <a class="info-panel__phone" id="info-phone" href="#"></a>
+          <p class="info-panel__alt" id="info-alt"></p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="dashboard-card" aria-labelledby="dash-title">
+      <div class="dashboard-card__badge" id="dash-badge">Emergency of the Week</div>
+      <h2 class="dashboard-card__title" id="dash-title"></h2>
+      <p class="dashboard-card__desc" id="dash-desc"></p>
+      <ul class="dashboard-card__tips" id="dash-tips"></ul>
+      <div class="dashboard-card__footer">
+        <span class="dashboard-card__week" id="dash-week"></span>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
